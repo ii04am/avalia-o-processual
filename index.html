@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+nome: Julia Gabrielle Silva da Costa 18
+nome:Alisson Henrique da Silva 01
+nome:Maria Eduarda Tanoue Barriouevo 23
+nome:Vanessa Ferreira dos Santos 30
+Turma:3B-->
+<html lang="pt-BR">
+<head>
+<title>Primos V1 while</title>
+<meta charset="UTF-8">
+<script>
+   function recebeNumero (){
+var canvas = document .getElementById('meuCanvas');
+if (canvas.getContext){
+var cntxt = canvas.getcontext ('2d');
+var maxWidth = 300;
+var lineHeight = 35;
+var x = (canvas.width = maxWidth) / 2;
+var y = 60;
+var grad = cntxt.createLinearGradient(0, 0, canvas.width, 0);
+grad.addColorStop(0,"rgb(255, 0, 0)");
+grad.addColorstop(0.5, "rgb(255, 255, 255) ");
+grad.addColorStop(1,"rgb(0, 0, 0)");
+var N1 = parseInt (document.getElementById("Numerol").value, 10);
+cntxt.fillStyle = "rgb(255, 255, 255)";
+cntxt.fillRect (0, 0, canvas.width, canvas.height);
+cntxt.font="30px Comic Sans MS";
+cntxt. fillstyle;
+grad;primo (entxt, N1, x, y);
+   }
+   }
+function primo (cntxt, N1, x, y){
+
+}
