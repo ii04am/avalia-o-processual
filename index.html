@@ -1,35 +1,75 @@
 <!DOCTYPE html>
 <!--
-nome: Julia Gabrielle Silva da Costa 18
-nome:Alisson Henrique da Silva 01
-nome:Maria Eduarda Tanoue Barriouevo 23
-nome:Vanessa Ferreira dos Santos 30
-Turma:3B-->
+    Alisson Henrique da Silva n°1
+    Julia Gabrielle Silva da Costa n° 16    Turma: 3°B
+    Maria Eduarda Tanoue Barrionuevo n° 21
+    Vanessa Ferreira Dos Santos n°28            
+                   -->
 <html lang="pt-BR">
-<head>
-<title>Primos V1 while</title>
-<meta charset="UTF-8">
-<script>
-   function recebeNumero (){
-var canvas = document .getElementById('meuCanvas');
-if (canvas.getContext){
-var cntxt = canvas.getcontext ('2d');
-var maxWidth = 300;
-var lineHeight = 35;
-var x = (canvas.width = maxWidth) / 2;
-var y = 60;
-var grad = cntxt.createLinearGradient(0, 0, canvas.width, 0);
-grad.addColorStop(0,"rgb(255, 0, 0)");
-grad.addColorstop(0.5, "rgb(255, 255, 255) ");
-grad.addColorStop(1,"rgb(0, 0, 0)");
-var N1 = parseInt (document.getElementById("Numerol").value, 10);
-cntxt.fillStyle = "rgb(255, 255, 255)";
-cntxt.fillRect (0, 0, canvas.width, canvas.height);
-cntxt.font="30px Comic Sans MS";
-cntxt. fillstyle;
-grad;primo (entxt, N1, x, y);
-   }
-   }
-function primo (cntxt, N1, x, y){
-
-}
+    <head>
+        <title>primo</title>        
+        <meta charset="UTF-8">          
+        <script>
+            function recebeNumero(){
+                var canvas = document.getElementById('meuCanvas');
+                if (canvas.getContext){
+                    var cntxt = canvas.getContext('2d');
+                    var maxWidth = 300;
+                    var lineHeight = 35;
+                    var x = (canvas.width - maxWidth) / 2;
+                    var y = 60;
+                    var grad = cntxt.createLinearGradient(0, 0, canvas.width, 0);
+                    grad.addColorStop(0,"rgb(255, 0, 0)");
+                    grad.addColorStop(0.5, "rgb(255, 255, 255)");
+                    grad.addColorStop(1,"rgb(0, 0, 0)");
+                   
+                    var N1 = parseInt(document.getElementById("Numero1").value, 10);
+                   
+                    cntxt.fillStyle = "rgb(255, 255, 255)";
+                    cntxt.fillRect (0, 0, canvas.width, canvas.height);                    
+                    cntxt.font="30px Comic Sans MS";
+                    cntxt.fillStyle = grad;
+                    primo(cntxt, N1, x, y);
+                }
+            }
+            function primo(cntxt, N1, x, y) {
+                let c=3
+                let line=""
+                let r="é primo"
+               
+                if(N1<2||(c=N1%2==0&&N1!=2)){
+                    line=line+"("+N1.toString()+") Não é primo"
+                }
+                else{
+                    while(c<=Math.sqrt(N1)){
+                        if(N1%c==0){
+                            line=line +"("+N1.toString()+"Não é primo"
+                            break
+                        }else{
+                            line=line +"("+N1.toString()+") É primo"
+                           
+                        }
+                        c=c+2
+                    }
+                   
+                }
+               
+             
+                cntxt.fillText(line, x, y);
+                cntxt.strokeText(line, x, y);
+                document.getElementById("Numero1").value = "";
+                document.getElementById("Numero1").focus();
+              }
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>Verificador de numeros primos</h1>
+            <label style="font-size: 20px;">Digite um número natural</label><br>
+            <input type="text" id="Numero1" autofocus><br><br>
+           
+            <button onclick="recebeNumero()">Verificar se é primo</button><br><br>
+            <canvas id="meuCanvas" width="500" height="300" style="border:1px solid #000000; background-color: white;"></canvas>
+        </div>
+    </body>
+</html>
